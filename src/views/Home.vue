@@ -37,6 +37,8 @@ export default {
           return require('@/assets/locations/toilet.svg')
         case 'bedroom':
           return require('@/assets/locations/bedroom.svg')
+        case 'corridor':
+          return require('@/assets/locations/corridor.svg')
         case 'out':
           return require('@/assets/locations/location-exit.svg')
         default:
