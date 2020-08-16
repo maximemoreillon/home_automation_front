@@ -27,7 +27,7 @@ export default {
     location(message){
       this.current_location = message
     },
-    
+
   },
   computed: {
     location_image_src(){
@@ -58,9 +58,8 @@ export default {
 
 <style scoped>
 .current_location_wrapper {
-  margin-top: 3em;
+  margin-top: 2em;
   text-align: center;
-
 }
 
 .current_location_image {
@@ -70,6 +69,6 @@ export default {
 }
 
 .current_location_legend {
-  font-size: 200%;
+  font-size: 150%;
 }
 </style>
