@@ -1,7 +1,12 @@
 <template>
-  <div class="current_location_wrapper">
-    <img class="current_location" :src="location_image_src" alt="">
+  <div class="location_view">
+    <h1>Current location</h1>
+    <div class="current_location_wrapper">
+      <img class="current_location_image" :src="location_image_src" alt="">
+      <p class="current_location_legend">{{current_location}}</p>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -21,7 +26,8 @@ export default {
     },
     location(message){
       this.current_location = message
-    }
+    },
+    
   },
   computed: {
     location_image_src(){
@@ -42,7 +48,6 @@ export default {
         case 'out':
           return require('@/assets/locations/location-exit.svg')
         default:
-          //return require('@/assets/locations/location-exit.svg')
           return require('@/assets/locations/crosshairs-question.svg')
       }
     }
@@ -53,15 +58,18 @@ export default {
 
 <style scoped>
 .current_location_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin-top: 3em;
+  text-align: center;
+
 }
 
-.current_location {
-  width: 70vw;
-  height: 60vh;
+.current_location_image {
+  width: 50vw;
+  height: 50vh;
   object-fit: contain;
+}
+
+.current_location_legend {
+  font-size: 200%;
 }
 </style>
