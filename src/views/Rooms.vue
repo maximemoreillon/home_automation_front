@@ -1,6 +1,11 @@
 <template>
   <div class="location_view">
     <h1>Rooms</h1>
+    
+    <p v-if="$store.state.rooms.length === 0">
+      <Loader >Waiting for AI results</Loader>
+    </p>
+
 
     <div
       class=""
@@ -15,10 +20,11 @@
 </template>
 
 <script>
+import Loader from '@moreillon/vue_loader'
 export default {
   name: 'home',
   components: {
-
+    Loader
   },
   data(){
     return {
