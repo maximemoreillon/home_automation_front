@@ -3,7 +3,7 @@
     <h1>Current location</h1>
     <div class="current_location_wrapper">
       <img class="current_location_image" :src="location_image_src" alt="">
-      <p class="current_location_legend">{{current_location}}</p>
+      <p class="current_location_legend">{{$store.state.location}}</p>
     </div>
   </div>
 
@@ -17,7 +17,7 @@ export default {
   },
   data(){
     return {
-      current_location: 'unknown'
+      
     }
   },
   computed: {

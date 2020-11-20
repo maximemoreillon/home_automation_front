@@ -1,13 +1,35 @@
 <template>
   <div id="app">
     <AppTemplate
-      applicationName="Home automation"/>
+      authenticate
+      applicationName="Home automation">
+
+      <template v-slot:navigation>
+
+        <router-link :to="{name: 'home'}">
+          <span>Location</span>
+        </router-link>
+
+        <router-link :to="{name: 'rooms'}">
+          <span>Rooms</span>
+        </router-link>
+
+        <router-link :to="{name: 'about'}">
+          <span>About</span>
+        </router-link>
+
+
+
+      </template>
+
+    </AppTemplate>
 
   </div>
 </template>
 
 <script>
-import AppTemplate from '@moreillon/vue_application_template'
+//import AppTemplate from '@moreillon/vue_application_template'
+import AppTemplate from '@moreillon/vue_application_template_flex'
 
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
