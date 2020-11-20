@@ -20,19 +20,10 @@ export default {
       current_location: 'unknown'
     }
   },
-  sockets: {
-    connect() {
-      console.log('socket connected')
-    },
-    location(message){
-      this.current_location = message
-    },
-
-  },
   computed: {
     location_image_src(){
 
-      switch (this.current_location) {
+      switch (this.$store.state.location) {
         case 'living':
           return require('@/assets/locations/living.svg')
         case 'kitchen':

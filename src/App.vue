@@ -17,6 +17,18 @@ export default {
   components: {
     AppTemplate
   },
+  sockets: {
+    connect() {
+      console.log('socket connected')
+      this.$store.commit('set_connected', true)
+    },
+    location(message){
+      this.$store.commit('set_location', message)
+    },
+    occupancy(room){
+      this.$store.commit('update_occupancy', room)
+    }
+  },
 
 
 }
