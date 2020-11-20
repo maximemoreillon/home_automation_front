@@ -22,6 +22,9 @@ spec:
         envFrom:
         - secretRef:
            name: environment-variables
+        env:
+          - name: VUE_APP_HOME_AUTOMATION_API_URL
+            vaue: https://api.automation.home.maximemoreillon.com
       imagePullSecrets:
       - name: registry-credentials # Credentials to pull image from registry
 

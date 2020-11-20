@@ -9,6 +9,7 @@ do
   echo "Processing $file ...";
 
   sed -i 's|VUE_APP_HOME_AUTOMATION_API_URL_PLACEHOLDER|'${VUE_APP_HOME_AUTOMATION_API_URL}'|g' $file
+  sed -i 's|VUE_APP_AUTHENTICATION_API_URL_PLACEHOLDER|'${VUE_APP_AUTHENTICATION_API_URL}'|g' $file
 
 done
 
