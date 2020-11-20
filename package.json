@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@moreillon/vue_application_template": "0.0.8",
+    "@moreillon/vue_application_template_flex": "^1.1.16",
     "core-js": "^3.4.4",
     "socket.io-client": "^2.3.0",
     "vue": "^2.6.10",
