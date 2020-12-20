@@ -10,8 +10,12 @@
           <span>Location</span>
         </router-link>
 
-        <router-link :to="{name: 'rooms'}">
-          <span>Rooms</span>
+        <router-link :to="{name: 'controls'}">
+          <span>Settings</span>
+        </router-link>
+
+        <router-link :to="{name: 'occupancy'}">
+          <span>Occupancy</span>
         </router-link>
 
         <router-link :to="{name: 'about'}">
