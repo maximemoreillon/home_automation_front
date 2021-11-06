@@ -14,10 +14,6 @@
           <span>Settings</span>
         </router-link>
 
-        <router-link :to="{name: 'occupancy'}">
-          <span>Occupancy</span>
-        </router-link>
-
         <router-link :to="{name: 'about'}">
           <span>About</span>
         </router-link>
@@ -51,9 +47,6 @@ export default {
     location(message){
       this.$store.commit('set_location', message)
     },
-    occupancy(room){
-      this.$store.commit('update_occupancy', room)
-    }
   },
 
 
