@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <AppTemplate
-      authenticate
-      applicationName="Home automation">
+    <AppTemplate :options="options">
 
       <template v-slot:navigation>
 
@@ -28,11 +26,7 @@
 </template>
 
 <script>
-//import AppTemplate from '@moreillon/vue_application_template'
-import AppTemplate from '@moreillon/vue_application_template_flex'
-
-// @ is an alias to /src
-//import HelloWorld from '@/components/HelloWorld.vue'
+import AppTemplate from '@moreillon/vue_application_template'
 
 export default {
   name: 'app',
@@ -48,6 +42,16 @@ export default {
       this.$store.commit('set_location', message)
     },
   },
+  data(){
+    return {
+      options: {
+        authenticate: true,
+        title: 'Home automation',
+        login_url: process.env.VUE_APP_LOGIN_URL,
+        identification_url: process.env.VUE_APP_IDENTIFICATION_URL
+      }
+    }
+  }
 
 
 }
