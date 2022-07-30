@@ -2,7 +2,7 @@
   <div id="app">
     <AppTemplate :options="options">
 
-      <template v-slot:navigation>
+      <template v-slot:nav>
 
         <router-link :to="{name: 'home'}">
           <span>Location</span>
