@@ -39,3 +39,6 @@ deploy:
   script:
     - envsubst < kubernetes_manifest.yml | kubectl apply -f -
     - kubectl rollout restart deployment/${APPLICATION_NAME}
+  environment:
+    kubernetes:
+      namespace: ${KUBERNETES_NAMESPACE}
