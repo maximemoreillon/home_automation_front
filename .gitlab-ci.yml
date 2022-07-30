@@ -34,10 +34,8 @@ deploy:
     - master
   tags:
     - dind
+  before_script:
+    - kubectl config use-context moreillon_ci/moreillon_k8s_home/kubernetes-agent:home
   script:
     - envsubst < kubernetes_manifest.yml | kubectl apply -f -
     - kubectl rollout restart deployment/${APPLICATION_NAME}
-  environment:
-    name: production
-    kubernetes:
-      namespace: ${KUBERNETES_NAMESPACE}
