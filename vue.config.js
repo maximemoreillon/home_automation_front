@@ -1,6 +1,6 @@
 module.exports = {
   pwa: {
-    name: "Finances",
+    name: "Home automation",
     themeColor: "#444444",
   },
 
