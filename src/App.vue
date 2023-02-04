@@ -32,7 +32,7 @@ export default {
 
   data: () => ({
     options: {
-      title: "Your application title goes here",
+      title: "Home automation",
       login_url: process.env.VUE_APP_LOGIN_URL,
       identification_url: process.env.VUE_APP_IDENTIFICATION_URL,
     },

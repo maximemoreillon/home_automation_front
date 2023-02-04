@@ -14,6 +14,7 @@
     "@moreillon/vue_loader": "^1.0.1",
     "axios": "^0.21.0",
     "core-js": "^3.4.4",
+    "register-service-worker": "^1.7.2",
     "socket.io-client": "^2.3.0",
     "vue": "^2.6.10",
     "vue-axios": "^3.2.0",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-pwa": "^5.0.8",
     "@vue/cli-plugin-router": "^4.1.0",
     "@vue/cli-plugin-vuex": "^4.1.0",
     "@vue/cli-service": "^4.1.0",

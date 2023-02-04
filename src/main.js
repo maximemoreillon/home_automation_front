@@ -8,6 +8,7 @@ import VueAxios from 'vue-axios'
 import VueSocketIOExt from 'vue-socket.io-extended'
 import io from 'socket.io-client'
 import vuetify from './plugins/vuetify'
+import './registerServiceWorker'
 
 const socket = io(process.env.VUE_APP_HOME_AUTOMATION_API_URL)
 
