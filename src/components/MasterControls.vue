@@ -1,5 +1,10 @@
 <template>
-  <v-switch class="pt-6" label="Automations" v-model="enabled"></v-switch>
+  <v-switch
+    class="pt-6"
+    label="Automations"
+    v-model="enabled"
+    @change="set_enabled()"
+  ></v-switch>
 </template>
 
 <script>
@@ -25,10 +30,10 @@ export default {
           console.error(error)
         })
     },
-    set_enabled(enabled) {
+    set_enabled() {
       const url = `${process.env.VUE_APP_HOME_AUTOMATION_API_URL}/enabled`
       this.axios
-        .put(url, { enabled: enabled })
+        .put(url, { enabled: this.enabled })
         .then((response) => {
           this.enabled = response.data
         })
