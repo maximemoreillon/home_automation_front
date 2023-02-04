@@ -1,9 +1,5 @@
 <template>
-  <v-switch
-    class="pt-6"
-    label="Automations enabled"
-    v-model="enabled"
-  ></v-switch>
+  <v-switch class="pt-6" label="Automations" v-model="enabled"></v-switch>
 </template>
 
 <script>

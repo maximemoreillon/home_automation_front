@@ -1,7 +1,7 @@
 <template>
   <v-card max-width="50rem" class="mx-auto">
     <v-toolbar flat>
-      <v-card-title> Current location </v-card-title>
+      <v-card-title> Location </v-card-title>
       <v-spacer />
       <MasterControls />
     </v-toolbar>
