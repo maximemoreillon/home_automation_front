@@ -1,62 +1,59 @@
 <template>
-  <div id="app">
-    <AppTemplate :options="options">
+  <AppTemplate :options="options">
+    <template v-slot:nav>
+      <v-list dense nav>
+        <v-list-item
+          v-for="(item, index) in nav"
+          :key="`nav_item_${index}`"
+          :to="item.to"
+          exact
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
 
-      <template v-slot:nav>
-
-        <router-link :to="{name: 'home'}">
-          <span>Location</span>
-        </router-link>
-
-        <router-link :to="{name: 'controls'}">
-          <span>Settings</span>
-        </router-link>
-
-        <router-link :to="{name: 'about'}">
-          <span>About</span>
-        </router-link>
-
-
-
-      </template>
-
-    </AppTemplate>
-
-  </div>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </template>
+  </AppTemplate>
 </template>
 
 <script>
-import AppTemplate from '@moreillon/vue_application_template'
-
+import AppTemplate from "@moreillon/vue_application_template_vuetify"
 export default {
-  name: 'app',
+  name: "App",
+
   components: {
-    AppTemplate
+    AppTemplate,
   },
+
+  data: () => ({
+    options: {
+      title: "Your application title goes here",
+      login_url: process.env.VUE_APP_LOGIN_URL,
+      identification_url: process.env.VUE_APP_IDENTIFICATION_URL,
+    },
+
+    nav: [
+      { title: "Home", to: { name: "home" }, icon: "mdi-home" },
+      {
+        title: "About",
+        to: { name: "about" },
+        icon: "mdi-information-outline",
+      },
+    ],
+  }),
+
   sockets: {
     connect() {
-      console.log('socket connected')
-      this.$store.commit('set_connected', true)
+      this.$store.commit("set_connected", true)
     },
-    location(message){
-      this.$store.commit('set_location', message)
+    location(message) {
+      this.$store.commit("set_location", message)
     },
   },
-  data(){
-    return {
-      options: {
-        authenticate: true,
-        title: 'Home automation',
-        login_url: process.env.VUE_APP_LOGIN_URL,
-        identification_url: process.env.VUE_APP_IDENTIFICATION_URL
-      }
-    }
-  }
-
-
 }
 </script>
-
-<style>
-
-</style>

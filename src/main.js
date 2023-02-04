@@ -7,6 +7,7 @@ import VueAxios from 'vue-axios'
 
 import VueSocketIOExt from 'vue-socket.io-extended'
 import io from 'socket.io-client'
+import vuetify from './plugins/vuetify'
 
 const socket = io(process.env.VUE_APP_HOME_AUTOMATION_API_URL)
 
@@ -18,5 +19,6 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')
