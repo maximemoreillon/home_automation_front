@@ -1,5 +1,5 @@
 <template>
-  <v-card width="50rem" class="mx-auto">
+  <v-card max-width="50rem" class="mx-auto">
     <v-toolbar flat>
       <v-card-title> Current location </v-card-title>
       <v-spacer />
@@ -49,8 +49,10 @@ export default {
 
 <style scoped>
 .current_location_wrapper {
-  margin-top: 2em;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .current_location_image {
