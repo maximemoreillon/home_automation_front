@@ -54,6 +54,9 @@ export default {
     location(message) {
       this.$store.commit("set_location", message)
     },
+    enabled(enabled) {
+      this.$store.commit("set_enabled", enabled)
+    },
   },
 }
 </script>

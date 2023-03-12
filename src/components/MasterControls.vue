@@ -11,15 +11,23 @@
 export default {
   name: "MasterControl",
 
-  data: () => ({
-    enabled: false,
-  }),
+  computed: {
+    enabled: {
+      get() {
+        return this.$store.state.enabled
+      },
+      set(newVal) {
+        this.$store.commit("set_enabled", newVal)
+      },
+    },
+  },
+
   mounted() {
     this.check_enabled()
   },
   methods: {
     check_enabled() {
-      const url = `${process.env.VUE_APP_HOME_AUTOMATION_API_URL}/enabled`
+      const url = `/enabled`
       this.axios
         .get(url)
         .then((response) => {
@@ -31,7 +39,7 @@ export default {
         })
     },
     set_enabled() {
-      const url = `${process.env.VUE_APP_HOME_AUTOMATION_API_URL}/enabled`
+      const url = `/enabled`
       this.axios
         .put(url, { enabled: this.enabled })
         .then((response) => {
