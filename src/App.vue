@@ -50,6 +50,7 @@ export default {
   sockets: {
     connect() {
       this.$store.commit("set_connected", true)
+      console.log("connected")
     },
     location(message) {
       this.$store.commit("set_location", message)
