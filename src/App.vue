@@ -1,5 +1,5 @@
 <template>
-  <AppTemplate :options="options">
+  <AppTemplate :options="options" @user="handleUser()">
     <template v-slot:nav>
       <v-list dense nav>
         <v-list-item
@@ -23,6 +23,8 @@
 
 <script>
 import AppTemplate from "@moreillon/vue_application_template_vuetify"
+import { socket } from "@/io"
+
 export default {
   name: "App",
 
@@ -46,11 +48,19 @@ export default {
       },
     ],
   }),
+  methods: {
+    handleUser() {
+      const jwt = this.$cookies.get("jwt")
+      socket.io.opts.transportOptions.polling.extraHeaders = {
+        Authorization: `bearer ${jwt}`,
+      }
+      socket.connect()
+    },
+  },
 
   sockets: {
     connect() {
       this.$store.commit("set_connected", true)
-      console.log("connected")
     },
     location(message) {
       this.$store.commit("set_location", message)

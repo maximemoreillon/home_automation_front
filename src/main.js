@@ -4,19 +4,19 @@ import router from "./router"
 import store from "./store"
 import axios from "axios"
 import VueAxios from "vue-axios"
-
+import VueCookies from "vue-cookies"
 import VueSocketIOExt from "vue-socket.io-extended"
-import io from "socket.io-client"
 import vuetify from "./plugins/vuetify"
 import "./registerServiceWorker"
+import { socket } from "@/io"
 
 const { VUE_APP_HOME_AUTOMATION_API_URL } = process.env
 
-const socket = io(VUE_APP_HOME_AUTOMATION_API_URL)
 axios.defaults.baseURL = VUE_APP_HOME_AUTOMATION_API_URL
 
 Vue.use(VueSocketIOExt, socket)
 Vue.use(VueAxios, axios)
+Vue.use(VueCookies)
 
 Vue.config.productionTip = false
 
