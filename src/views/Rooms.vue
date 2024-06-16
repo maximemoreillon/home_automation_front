@@ -1,5 +1,5 @@
 <template>
-  <v-card :loading="loading">
+  <v-card :loading="loading" max-width="80rem" class="mx-auto">
     <v-toolbar flat>
       <v-toolbar-title> Rooms </v-toolbar-title>
       <v-spacer />
