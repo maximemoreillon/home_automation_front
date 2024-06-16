@@ -12,9 +12,15 @@ const routes = [
   },
   {
     path: "/rooms",
-    alias: "/config",
-    name: "config",
-    component: () => import("../views/Config.vue"),
+
+    name: "rooms",
+    component: () => import("../views/Rooms.vue"),
+  },
+  {
+    path: "/rooms/:_id",
+
+    name: "room",
+    component: () => import("../views/Room.vue"),
   },
   {
     path: "/about",

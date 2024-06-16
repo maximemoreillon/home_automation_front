@@ -41,7 +41,7 @@ export default {
 
     nav: [
       { title: "Home", to: { name: "home" }, icon: "mdi-home" },
-      { title: "Config", to: { name: "config" }, icon: "mdi-cogs" },
+      { title: "Rooms", to: { name: "rooms" }, icon: "mdi-floor-plan" },
       {
         title: "About",
         to: { name: "about" },
