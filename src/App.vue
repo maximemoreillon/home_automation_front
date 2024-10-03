@@ -1,5 +1,5 @@
 <template>
-  <AppTemplate :options="options" @user="handleUser()">
+  <AppTemplate :options="options" @user="handleUser($event)">
     <template v-slot:nav>
       <v-list dense nav>
         <v-list-item
@@ -37,6 +37,13 @@ export default {
       title: "Home automation",
       login_url: process.env.VUE_APP_LOGIN_URL,
       identification_url: process.env.VUE_APP_IDENTIFICATION_URL,
+      oidc: {
+        authority: process.env.VUE_APP_OIDC_AUTHORITY,
+        client_id: process.env.VUE_APP_OIDC_CLIENT_ID,
+        extraQueryParams: {
+          audience: process.env.VUE_APP_OIDC_AUDIENCE,
+        },
+      },
     },
 
     nav: [
@@ -50,8 +57,10 @@ export default {
     ],
   }),
   methods: {
-    handleUser() {
-      const jwt = this.$cookies.get("jwt")
+    handleUser(user) {
+      if (!user) return
+      const jwt =
+        this.axios.defaults.headers.common["Authorization"]?.split(" ")[1]
       socket.io.opts.transportOptions.polling.extraHeaders = {
         Authorization: `bearer ${jwt}`,
       }
